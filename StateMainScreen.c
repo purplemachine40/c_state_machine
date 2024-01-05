@@ -1,4 +1,5 @@
 #include "Common.h"
+#include "../ScreenData.h"
 #include "StateMainScreen.h"
 
 /********************************************
@@ -11,6 +12,7 @@ uint8_t StateMainScreen(TS_STATE_INFO* pSuper)
 
 	if (pSuper->stateMessage == sm_INIT)
 	{
+		SetScreenData(ds_MAIN);
 		printf("State Main Screen\n");
 	}
 

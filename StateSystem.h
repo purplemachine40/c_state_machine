@@ -5,4 +5,4 @@
 ********************************************/
 
 void InitStateSystem(void);
-void StateSystemUpdate(uint8_t* pShouldExit);
+void StateSystemUpdate(void);

@@ -1,6 +1,6 @@
 #include "Common.h"
 #include "EventGenerator.h"
-#include "StateOff.h"
+#include "StateStartup.h"
 #include "StateSystem.h"
 
 /********************************************
@@ -17,21 +17,15 @@ void InitStateSystem(void)
 {
 	stateSysInfo.stateEvent = se_NONE;
 	stateSysInfo.stateMessage = sm_INIT;
-	stateSysInfo.pNextState = StateOff;
+	stateSysInfo.pNextState = StateStartup;
 	stateSysInfo.pData = NULL;
 }
 
 
-void StateSystemUpdate(uint8_t *pShouldExit)
+void StateSystemUpdate(void)
 {
-	TE_SYSTEM_EVENT sysEvent = GetEvent();
+	TE_SYSTEM_EVENT sysEvent = GetSysEvent();
 	TD_STATE_PROTO currentState = stateSysInfo.pNextState;	
-
-	if(sysEvent == se_EXIT_PROGRAM)
-	{
-		*pShouldExit = TRUE;
-		return;
-	}
 
 	stateSysInfo.stateEvent = sysEvent;	
     CallState(&stateSysInfo);

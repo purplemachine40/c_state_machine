@@ -40,19 +40,19 @@ uint8_t StateOn(TS_STATE_INFO* pSuper)
 	{
 		switch(stateOnInfo.stateEvent)
 		{
-			case se_ENTER_MENU:
+			case se_CENTER_BTN_PRESSED:
 			{
 				stateOnInfo.pNextState = StateMenu;
 				eventHandled = TRUE;
 			}
 			break;
-			case se_EXIT_MENU:
+			case se_BACK_BTN_PRESSED:
 			{
 				stateOnInfo.pNextState = StateMainScreen;
 				eventHandled = TRUE;
 			}
 			break;
-			case se_TURN_OFF:
+			case se_POWER_BTN_PRESSED:
 			{
 				pSuper->pNextState = StateOff;
 				eventHandled = TRUE;

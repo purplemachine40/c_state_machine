@@ -1,5 +1,6 @@
 #include "Common.h"
 #include "EventGenerator.h"
+#include "../ScreenData.h"
 #include "StateTopMenu.h"
 
 /********************************************
@@ -12,6 +13,7 @@ uint8_t StateTopMenu(TS_STATE_INFO* pSuper)
 
     if (pSuper->stateMessage == sm_INIT)
     {
+        SetScreenData(ds_MAIN_MENU);
         printf("State Top Menu\n");	
     }
 

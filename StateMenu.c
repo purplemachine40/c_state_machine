@@ -39,13 +39,13 @@ uint8_t StateMenu(TS_STATE_INFO* pSuper)
 	{
 		switch(stateMenuInfo.stateEvent)
 		{
-			case se_ENTER_MENU:
+			case se_CENTER_BTN_PRESSED:
 			{
 				stateMenuInfo.pNextState = StateSubMenu;
 				eventHandled = TRUE;
 			}
 			break;
-			case se_EXIT_MENU:
+			case se_BACK_BTN_PRESSED:
 			{
 				if(stateMenuInfo.pNextState == StateSubMenu)
 				{
